@@ -561,7 +561,6 @@
                     document.getElementById("latitude").value = latitude;
                 }
             </script>
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAYG0REJ3j2ZSIo5PM1dMKRj0G5WdOd5c&callback=initMap" async defer></script>
             <script>
                 var map;
 
