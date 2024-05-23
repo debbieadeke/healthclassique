@@ -23,4 +23,8 @@ class ManufacturingController extends Controller
     {
         return view('manufacturing.chemstore_form');
     }
+    public function manufacturing_records()
+    {
+        return view('manufacturing.manufacturing_records');
+    }
 }

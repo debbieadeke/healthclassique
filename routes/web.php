@@ -407,6 +407,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('chem_store', 'chem_store')->name('chem_store');
         Route::get('production_form','production_form')->name('production_form');
         Route::get('chemstore_form','chemstore_form')->name('chemstore_form');
+        Route::get('manufacturing_records','manufacturing_records')->name('manufacturing_records');
 
     });
 //

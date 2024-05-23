@@ -126,6 +126,7 @@
                 <li><a class="dropdown-item" href="{{route('manufacturing.production_form')}}">Production Form</a></li>
                 <li><a class="dropdown-item" href="{{ route('manufacturing.chem_store') }}">Chemstore Report</a></li>
                 <li><a class="dropdown-item" href="{{ route('manufacturing.production') }}">Production Report</a></li>
+                <li><a class="dropdown-item" href="{{ route('manufacturing.manufacturing_records') }}">Manufacturing Records</a></li>
             </ul>
         </li>
 
