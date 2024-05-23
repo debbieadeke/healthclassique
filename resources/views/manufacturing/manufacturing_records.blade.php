@@ -51,7 +51,7 @@
                         <button type="button" class="btn btn-primary mt-3 add-row-button">Add Row</button>
                     </div>
                     <div class="table-responsive">
-                        <table class="table caption-top table-striped table-bordered mb-0 mt-3 text-center table-to-modify">
+                        <table class="table caption-top table-striped table-bordered mb-0 mt-3 text-center table-to-modify2">
                             <caption class="mixing-temp"><b>HOMOGENEOUS PARAMETER</b></caption>
                             <thead>
                             <tr>
@@ -81,10 +81,10 @@
                             </tr>
                             </tbody>
                         </table>
-                        <button type="button" class="btn btn-primary mt-3 add-row-button">Add Row</button>
+                        <button type="button" class="btn btn-primary mt-2 add-row-button2">Add Row</button>
                     </div>
                     <div class="table-responsive">
-                        <table class="table caption-top table-striped table-bordered mb-0 mt-3 text-center table-to-modify">
+                        <table class="table caption-top table-striped table-bordered mb-0 mt-3 text-center table-to-modify3">
                             <caption class="mixing-temp"><b>COOLING PARAMETERS</b></caption>
                             <thead>
                             <tr>
@@ -114,9 +114,45 @@
                             </tr>
                             </tbody>
                         </table>
-                        <button type="button" class="btn btn-primary mt-3 add-row-button">Add Row</button>
+                        <button type="button" class="btn btn-primary mt-2 add-row-button3">Add Row</button>
                     </div>
                 </form>
+                <div class="row mt-5 mb-3">
+                    <div class="col-md-2 ">
+                        <div>
+                            <span class="process"><b>Process Start Time:</b></span>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="time" class="form-control black-border time">
+                    </div>
+
+                    <div class="col-md-2">
+                        <div>
+                            <span class="process"><b>Process End Time:</b></span>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="time" class="form-control black-border time">
+                    </div>
+                    <div class="col-md-2">
+                        <div>
+                            <span class="process-at"><b>Final Sample Submitted at:</b></span>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="time" class="form-control black-border final">
+                    </div>
+
+
+
+                </div>
+                <div class="row mt-5 mb-3 ">
+                    <div class="col-md-3 process"><b>General Comment:</b></div>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control wide-input black-border ant">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -188,6 +224,26 @@
             border-radius: 5px;
             border: 1px solid #DEDFEA;
         }
+        .process{
+            font-size:13px;
+            margin-left:-2px;
+        }
+        .process-at{
+            font-size:13px;
+            margin-left:-18px;
+        }
+        .time{
+            margin-left:-60px;
+        }
+        .ant{
+            margin-left:-144px;
+        }
+        .final{
+            margin-left:-25px;
+        }
+        .black-border{
+            border-color:#000000 !important;
+        }
     </style>
 
     <script>
@@ -201,8 +257,47 @@
             table.querySelector('tbody').appendChild(newRow);
         });
 
+        document.querySelector('.add-row-button2').addEventListener('click', function() {
+            var table = document.querySelector('.table-to-modify2');
+            var newRow = table.rows[1].cloneNode(true);
+            var inputs = newRow.querySelectorAll('input, textarea');
+            inputs.forEach(function(input) {
+                input.value = '';
+            });
+            table.querySelector('tbody').appendChild(newRow);
+        });
+
+        document.querySelector('.add-row-button3').addEventListener('click', function() {
+            var table = document.querySelector('.table-to-modify3');
+            var newRow = table.rows[1].cloneNode(true);
+            var inputs = newRow.querySelectorAll('input, textarea');
+            inputs.forEach(function(input) {
+                input.value = '';
+            });
+            table.querySelector('tbody').appendChild(newRow);
+        });
+    </script>
+<script>
         document.addEventListener('DOMContentLoaded', function() {
             document.querySelector('.table-to-modify').addEventListener('click', function(e) {
+                if (e.target.classList.contains('remove-row')) {
+                    e.preventDefault();
+                    e.target.closest('tr').remove();
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.table-to-modify2').addEventListener('click', function(e) {
+                if (e.target.classList.contains('remove-row')) {
+                    e.preventDefault();
+                    e.target.closest('tr').remove();
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.table-to-modify3').addEventListener('click', function(e) {
                 if (e.target.classList.contains('remove-row')) {
                     e.preventDefault();
                     e.target.closest('tr').remove();

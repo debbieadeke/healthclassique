@@ -408,6 +408,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('production_form','production_form')->name('production_form');
         Route::get('chemstore_form','chemstore_form')->name('chemstore_form');
         Route::get('manufacturing_records','manufacturing_records')->name('manufacturing_records');
+        Route::get('quality_analysis_report','quality_analysis_report')->name('quality_analysis_report');
 
     });
 //

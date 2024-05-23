@@ -27,4 +27,7 @@ class ManufacturingController extends Controller
     {
         return view('manufacturing.manufacturing_records');
     }
+    public function quality_analysis_report(){
+        return view('manufacturing.quality_analysis_report');
+    }
 }
